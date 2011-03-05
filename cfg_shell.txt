@@ -1,0 +1,21 @@
+load 01
+clear 02
+dasm 03
+dreg 04
+sreg 05
+dmem 06
+smem 07
+run 08
+step 09
+stepi 0A
+addbp 0B
+rmbp 0C
+dbp 0D
+help 0E
+exit 0F
+dfile 10
+smems 12
+dmemnn 13
+dmips 14
+
+

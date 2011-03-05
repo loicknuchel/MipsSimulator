@@ -1,0 +1,9 @@
+Librairie MiniElfLoader
+- include contient le(s) fichiers .h
+- lib la librairie compilée
+
+Pour tester:
+- copier le répertoire Test en entier chez vous
+- compilez (il contient un Makefile)
+Si votre installation est correction (variables d'environnement LIBELF_DIR et MINIELFLOAAADER_DIR bien définies), il n'y a aucun soucis.
+Pour exécuter: ./miniElfLoaderTest <fichierTest.o>

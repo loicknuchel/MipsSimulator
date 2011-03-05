@@ -1,0 +1,81 @@
+exit
+exit
+Quitter le programme.
+Quitte et ferme le simulateur.
+@
+help
+help [<command>]
+Aide concernant une commande.
+Affiche l'aide d'une commande et de sa syntaxe.
+Si aucun argument n'est fourni, affiche la liste de toutes commandes du simulateur avec une dexcription tres breve (moins d'une ligne).
+@
+dbp
+dbp
+Affiche les points d'arret.
+Affiche sur la console de visualisation l'adresse de tous les points d'arret positionnes dans la memoire par l'utilisateur.
+Les points d'arret sont supprimes lors du chargement d'un fichier.
+@
+rmbp
+rmbp [<address>]
+Supprimer un point d'arret.
+Enleve le point d'arret a l'adresse fournie en parametre. S
+Si celui-ci est omis, cette commande efface tous les points d'arret.
+@
+addbp
+addbp <address>
+Ajouter un point d'arret (break point) a l'adresse fournie.
+Ajoute un point d'arret a l'adresse fournie en parametre.
+L'adresse doit etre alignee, c'est a dire etre un multiple de 4.
+Lorsque le comparateur ordinal PC sera egal a cette valeur, l'execution sera interrompue et la main rendue a l'utilisateur.
+@
+stepi
+stepi
+Execution pas a pas.
+Execute une instruction et rend la main a l'utilisateur.
+Si l'on rencontre un appel a une procedure, seul le saut est execute et l'adresse du programme est placee au debut de cette procedure.
+@
+step
+step
+Execution pas a pas (ligne a ligne).
+Provoque l'execution del'instruction dont l'adresse est contenue dans le registre de l'adresse du programme puis rend la main a l'utilisateur.
+@
+run
+run [<address>]
+Execution un programme a partir d'une adresse.
+Charge l'adresse d'un programme fournie en parametre et lance le microprocesseur.Si le parametre est omis, on se contente de lancer le microprocesseur, qui commencera son execution a la valeur courante de l'adresse du programme.
+@
+smem
+smem <address> <value>
+Modifie une valeur en memoire
+Ecrit dans la memoire, a l'adresse fournie en parametre, la valeur fournie en parametre. 
+@
+dmem
+dmem <adress> [<address>]
+Afficher la memoire
+Affiche sur la console le contenu de la memoire.L'affichage se fera a raison de 16 octets par lignes separes par des espaces (un ocet sera affiche par deux chiffres hexadecimaux).Chaque ligne commencera par l'adresse hexadecimale (32 bits) de l'octet le plus a gauche de la ligne. Possibilite d'afficher toutes les lignes a partir d'une adresse add1 sil'utilisateur tape dmem <add1>, ou toutes les lignes entre deux adresses add1 et add2 si l'utilisateur tape dmem <add1>-<add2>.
+@
+sreg
+sreg <registername> <value>
+Inscrire une valeur dans un registre
+Ecrit la valeur donnee dans le registre passe en parametre
+@
+dreg
+dreg [<registername>]
+Affiche un registre
+Affiche dans la console, au format hexadecimal, la valeur du registre donne en parametre. Si absence de parametre, affiche les valeurs de chacun des registres.
+@
+dasm
+dasm
+Affiche le code desassemble
+Affiche dans la console le programme en langage assembleur correspondant au code binaire charge sous la forme suivante: l'adresse d'implantation en memoire, le code binaire et le code desassemble.
+@
+clear
+clear
+Reinitialisation du simulateur
+Remet les valeurs de tous les registres a leur etat initial et vide completement la memoire;
+@
+load
+load <filename>
+Charge un fichier objet
+Chargement d'un fichier au format elf relogeable sans symbole externe. en cas de sections de relocations de type .rel.text et/ou .rel.data, la relocation sera geree automatiquement avant l'ecriture des donnees en memoire.
+@
